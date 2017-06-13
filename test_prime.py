@@ -12,4 +12,11 @@ class TestForPrime(unittest.TestCase):
        self.assertEqual(result,[2,3,5,7],msg="value not prime")
 
     def test_if_list(self):
-        self.assertTrue(type(get_prime_numbers(10))==list,msg="output is not a list")
+        self.assertTrue(type(get_prime_numbers(10))==list,msg="output is not a list")    
+    def test__if_value_empty(self):
+        self.assertTrue(get_prime_numbers(10) != None)
+
+    def test_output_positive(self):
+        result=get_prime_numbers(10)
+        for i in result:
+            self.assertTrue(i>0)
